@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>session test</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #output { font-size: 20px; color: #333; margin-top: 20px; }
+    </style>
     <script>
         window.onload = function() {
-            console.log("session_id from JS:", window.session_id);
-            document.body.innerText = "세션 ID는 " + window.session_id;
+            console.log("session_id from JS:", window.__imqa_session_id);
+            document.body.innerText = "세션 ID는 " + window.__imqa_session_id;
         };
     </script>
 </head>
-<body></body>
+<body>
+    <h1>세션 테스트 페이지</h1>
+    <div id="output">세션 ID를 불러오는 중...</div>
+</body>
 </html>
