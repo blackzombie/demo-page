@@ -13,9 +13,12 @@
         //    console.log("session_id from JS:", window.__imqa_session_id);
         //    document.body.innerText = "session ID : " + window.__imqa_session_id;
         //};
+
         const msg = BridgeA.getMessage();
+        console.log("msg~~~~~1 : ", msg)
         window.onload = function () {
             //const msg = BridgeA.getMessage();
+            console.log("msg~~~~~2 onLoad : ", msg)
             document.body.innerText = `BridgeA: ${msg}`;
         }
     </script>
