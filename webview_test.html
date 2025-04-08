@@ -13,7 +13,7 @@
         //    console.log("session_id from JS:", window.__imqa_session_id);
         //    document.body.innerText = "session ID : " + window.__imqa_session_id;
         //};
-        // const msg = IMQANative.getMessage();
+        // const msg = IMQANative.getSession();
         // console.log("msg~~~~~1 : ")
         //   function ready() {
         //     console.log('DOM이 준비되었습니다!', msg);            
@@ -21,10 +21,10 @@
 
         // document.addEventListener("DOMContentLoaded", ready);
 
-        const msg = IMQANative.getMessage();
+        const msg = IMQANative.getSession();
         console.log("msg~~~~~2 : ", msg)
         window.onload = function () {
-            //const msg = IMQANative.getMessage();
+            
             console.log("msg~~~~~3 onLoad : ", msg)
             document.body.innerText = `IMQANative: ${msg}`;
         }
