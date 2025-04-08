@@ -13,14 +13,15 @@
         //    console.log("session_id from JS:", window.__imqa_session_id);
         //    document.body.innerText = "session ID : " + window.__imqa_session_id;
         //};
-        console.log("msg~~~~~1 : ", msg)
+        const msg = BridgeA.getMessage();
+        console.log("msg~~~~~1 : ")
           function ready() {
-            console.log('DOM이 준비되었습니다!');            
+            console.log('DOM이 준비되었습니다!', msg);            
           }
 
-          document.addEventListener("DOMContentLoaded", ready);
+        document.addEventListener("DOMContentLoaded", ready);
 
-        const msg = BridgeA.getMessage();
+        
         console.log("msg~~~~~2 : ", msg)
         window.onload = function () {
             //const msg = BridgeA.getMessage();
@@ -30,7 +31,7 @@
     </script>
 </head>
 <body>
-    <h1>세션 테스트 페이지</h1>
+    <h1>세션 테스트 페이지 04081326</h1>
     <div id="output">세션 ID를 불러오는 중...</div>
 </body>
 </html>
