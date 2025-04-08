@@ -13,20 +13,20 @@
         //    console.log("session_id from JS:", window.__imqa_session_id);
         //    document.body.innerText = "session ID : " + window.__imqa_session_id;
         //};
-        const msg = BridgeA.getMessage();
-        console.log("msg~~~~~1 : ")
-          function ready() {
-            console.log('DOM이 준비되었습니다!', msg);            
-          }
+        // const msg = IMQANative.getMessage();
+        // console.log("msg~~~~~1 : ")
+        //   function ready() {
+        //     console.log('DOM이 준비되었습니다!', msg);            
+        //   }
 
-        document.addEventListener("DOMContentLoaded", ready);
+        // document.addEventListener("DOMContentLoaded", ready);
 
-        
+        const msg = IMQANative.getMessage();
         console.log("msg~~~~~2 : ", msg)
         window.onload = function () {
-            //const msg = BridgeA.getMessage();
+            //const msg = IMQANative.getMessage();
             console.log("msg~~~~~3 onLoad : ", msg)
-            document.body.innerText = `BridgeA: ${msg}`;
+            document.body.innerText = `IMQANative: ${msg}`;
         }
     </script>
 </head>
