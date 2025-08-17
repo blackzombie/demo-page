@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="container w-[1200px] mx-auto bg-slate-400">
+      <div class="noti-list">
+        <div class="noti-item-title flex [&>div]:h-[40px]">
+          <div
+            class="w-[100px] bg-[#666666] flex items-center justify-center text-white border border-gray-400"
+          >
+            NO
+          </div>
+          <div
+            class="w-[160px] bg-[#666666] flex items-center justify-center text-white border border-gray-400"
+          >
+            분류
+          </div>
+          <div
+            class="flex-[1] bg-[#666666] flex items-center justify-center text-white border border-gray-400"
+          >
+            내용
+          </div>
+          <div
+            class="w-[200px] bg-[#666666] flex items-center justify-center text-white border border-gray-400"
+          >
+            등록일
+          </div>
+        </div>
+
+        <div class="noti-item-list"></div>
+
+        <script>
+          for (let i = 1; i <= 10; i++) {
+            const productItem = `
+              <div class="noti-item flex [&>div]:h-[40px]">
+                <div
+                  class="w-[100px] border border-gray-200 bg-white text-center flex items-center justify-center"
+                >
+                  ${i}
+                </div>
+                <div
+                  class="w-[160px] border border-gray-200 bg-white text-center flex items-center justify-center"
+                >
+                  분류${i}
+                </div>
+                <div
+                  class="flex-[1] border border-gray-200 bg-white text-center flex items-center justify-center"
+                >
+                  내용${i}
+                </div>
+                <div
+                  class="w-[200px] border border-gray-200 bg-white text-center flex items-center justify-center"
+                >
+                  9999-01-01
+                </div>
+              </div>
+            `;
+            document.querySelector(".noti-item-list").innerHTML += productItem;
+          }
+        </script>
+      </div>
+    </div>
+
+    <div class="pagination flex justify-center mt-10">
+      <div class="pagination-item flex">
+        <a class="mx-1" href="#"> < </a>
+        <a class="mx-1" href="#"> 1 </a>
+        <a class="mx-1" href="#"> 2 </a>
+        <a class="mx-1" href="#"> 3 </a>
+        <a class="mx-1" href="#"> 4 </a>
+        <a class="mx-1" href="#"> 5 </a>
+        <a class="mx-1" href="#"> > </a>
+      </div>
+    </div>
+  </body>
+</html>

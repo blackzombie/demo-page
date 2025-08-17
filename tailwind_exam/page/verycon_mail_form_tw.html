@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verycon Mail Form - Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              noto: ["Noto Sans KR", "sans-serif"],
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+            colors: {
+              "form-bg": "#F9F9F9",
+              "form-border": "#E1E1E1",
+              "input-border": "#EDEDED",
+              "dropdown-bg": "#F6F6F6",
+              "dropdown-border": "#DADADA",
+              "text-primary": "#444444",
+              "text-secondary": "#333333",
+              "text-placeholder": "#C6C6C6",
+              "text-dropdown": "#666666",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .form-input:focus::placeholder {
+        color: #c6c6c6;
+        font-weight: 400;
+      }
+      .form-input::placeholder {
+        color: #333333;
+        font-weight: 500;
+      }
+      .textarea-input::placeholder {
+        color: #c6c6c6;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-text-secondary font-montserrat">
+    <div class="max-w-7xl mx-auto px-5 py-10">
+      <form class="w-full max-w-[1194px] mx-auto">
+        <!-- 성함과 연락처 행 -->
+        <div class="flex gap-2 mb-5">
+          <div class="flex flex-col w-[595px] h-[60px]">
+            <div
+              class="bg-form-bg border-b border-form-border px-5 flex items-center h-[60px] font-noto font-medium text-base leading-[1.448] text-text-primary flex-shrink-0"
+            >
+              성함 *
+            </div>
+            <div
+              class="bg-form-bg border-b border-input-border px-4 py-2.5 flex items-center flex-1"
+            >
+              <input
+                type="text"
+                placeholder="(주)모카커뮤니케이션즈"
+                class="w-full border-none bg-transparent font-montserrat font-medium text-base leading-[1.219] text-text-secondary outline-none form-input"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col w-[595px] h-[60px]">
+            <div
+              class="bg-form-bg border-b border-form-border px-5 flex items-center h-[60px] font-noto font-medium text-base leading-[1.448] text-text-primary flex-shrink-0"
+            >
+              연락처 *
+            </div>
+            <div
+              class="bg-form-bg border-b border-input-border px-4 py-2.5 flex items-center flex-1"
+            >
+              <input
+                type="tel"
+                placeholder="01012345678"
+                class="w-full border-none bg-transparent font-montserrat font-medium text-base leading-[1.219] text-text-secondary outline-none form-input"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 이메일 -->
+        <div class="flex flex-col w-full h-[60px] mb-5">
+          <div
+            class="bg-form-bg border-b border-form-border px-5 flex items-center h-[60px] font-noto font-medium text-base leading-[1.448] text-text-primary flex-shrink-0"
+          >
+            이메일 *
+          </div>
+          <div
+            class="bg-form-bg border-b border-input-border px-4 py-2.5 flex items-center flex-1"
+          >
+            <input
+              type="email"
+              placeholder="example@mocah.co.kr"
+              class="w-full border-none bg-transparent font-montserrat font-medium text-base leading-[1.219] text-text-secondary outline-none form-input"
+            />
+          </div>
+        </div>
+
+        <!-- 문의유형 -->
+        <div class="flex flex-col w-full h-[60px] mb-5">
+          <div
+            class="bg-form-bg border-b border-form-border px-5 flex items-center h-[60px] font-noto font-medium text-base leading-[1.448] text-text-primary flex-shrink-0"
+          >
+            문의유형 *
+          </div>
+          <div
+            class="bg-form-bg border-b border-input-border px-4 py-2.5 flex items-center flex-1"
+          >
+            <div
+              class="w-[189px] h-[46px] bg-dropdown-bg border border-dropdown-border flex items-center justify-between px-2.5 cursor-pointer"
+            >
+              <span
+                class="font-montserrat font-normal text-base leading-[1.5] text-text-dropdown"
+                >대량발송문의</span
+              >
+              <i class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 제목 -->
+        <div class="flex flex-col w-full h-[60px] mb-5">
+          <div
+            class="bg-form-bg border-b border-form-border px-5 flex items-center h-[60px] font-noto font-medium text-base leading-[1.448] text-text-primary flex-shrink-0"
+          >
+            제목 *
+          </div>
+          <div
+            class="bg-form-bg border-b border-input-border px-4 py-2.5 flex items-center flex-1"
+          >
+            <input
+              type="text"
+              placeholder="제목 입력칸 입니다."
+              class="w-full border-none bg-transparent font-montserrat font-normal text-base leading-[1.219] text-text-placeholder outline-none form-input"
+            />
+          </div>
+        </div>
+
+        <!-- 내용 -->
+        <div class="flex flex-col w-full h-[388px]">
+          <div
+            class="bg-form-bg border-b border-form-border px-5 flex items-center h-[60px] font-noto font-medium text-base leading-[1.448] text-text-primary flex-shrink-0"
+          >
+            내용 *
+          </div>
+          <div
+            class="bg-form-bg border-b border-input-border px-4 py-5 flex items-start flex-1 h-[328px]"
+          >
+            <textarea
+              placeholder="문의하실 내용을 입력하여 주세요."
+              class="w-full h-full border-none bg-transparent font-montserrat font-medium text-base leading-[1.219] text-text-secondary outline-none resize-none textarea-input"
+            ></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

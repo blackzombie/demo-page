@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .form-item-title-item-title {
+          @apply w-[190px] h-[59px] bg-[#E1E1E1] flex items-center px-[10px];
+        }
+      }
+      .form-item-title-item-input {
+        @apply flex-1 px-[10px];
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container w-[1200px] mx-auto">
+      <div class="form-item [&>div]:h-[60px]">
+        <div class="form-item-name-phone border-b border-gray-200 flex">
+          <div class="form-item-title-item flex-[1] flex items-center">
+            <div class="form-item-title-item-title">
+              성함 <span class="text-red-500">*</span>
+            </div>
+            <div class="form-item-title-item-input">
+              <input class="w-full" type="text" placeholder="(주) 회사명" />
+            </div>
+          </div>
+          <div class="form-item-title-item flex-[1] flex items-center">
+            <div class="form-item-title-item-title">
+              연락처 <span class="text-red-500">*</span>
+            </div>
+            <div class="form-item-title-item-input">
+              <input class="w-full" type="text" placeholder="010-1234-5678" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-item-email border-b border-gray-200 flex items-center">
+          <div class="form-item-title-item-title">이메일 *</div>
+          <div class="form-item-title-item-input">
+            <input
+              class="w-full"
+              type="text"
+              placeholder="example@example.com"
+            />
+          </div>
+        </div>
+
+        <div class="form-item-type border-b border-gray-200 flex items-center">
+          <div class="form-item-title-item-title">문제유형 *</div>
+          <div class="form-item-title-item-input flex-1 px-[10px]">
+            <select class="h-[40px] border border-gray-300 px-2">
+              <option value="">문제유형을 선택해주세요</option>
+              <option value="기술문의">기술문의</option>
+              <option value="버그신고">버그신고</option>
+              <option value="기능개선">기능개선 요청</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-item-title border-b border-gray-200 flex items-center">
+          <div class="form-item-title-item-title">제목 *</div>
+          <div class="form-item-title-item-input">
+            <input
+              class="w-full"
+              type="text"
+              placeholder="제목을 입력해주세요."
+            />
+          </div>
+        </div>
+
+        <div
+          class="form-item-content border-b border-gray-200 flex items-center !h-[200px]"
+        >
+          <div
+            class="w-[190px] h-[199px] bg-[#E1E1E1] flex items-center px-[10px]"
+          >
+            내용 *
+          </div>
+          <div class="flex-1 px-[10px] py-[10px] h-[199px]">
+            <textarea
+              class="w-full h-full resize-none border border-gray-300 p-2"
+              placeholder="내용을 입력해주세요."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

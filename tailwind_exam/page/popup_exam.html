@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업 예제 모음</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-8">
+    <div class="popup-exam space-y-4">
+      <h1 class="text-2xl font-bold mb-6">팝업 예제들</h1>
+
+      <!-- 기본 팝업들 -->
+      <div class="space-y-2">
+        <h2 class="text-lg font-semibold">기본 브라우저 팝업</h2>
+        <button
+          id="alertBtn"
+          class="bg-green-500 text-white px-4 py-2 rounded mr-2"
+        >
+          Alert 팝업
+        </button>
+        <button
+          id="confirmBtn"
+          class="bg-yellow-500 text-white px-4 py-2 rounded mr-2"
+        >
+          Confirm 팝업
+        </button>
+        <button
+          id="promptBtn"
+          class="bg-purple-500 text-white px-4 py-2 rounded"
+        >
+          Prompt 팝업
+        </button>
+      </div>
+
+      <!-- 커스텀 모달 -->
+      <div class="space-y-2">
+        <h2 class="text-lg font-semibold">커스텀 모달</h2>
+        <button id="openBtn" class="bg-blue-500 text-white px-4 py-2 rounded">
+          커스텀 모달 열기
+        </button>
+      </div>
+
+      <!-- 결과 표시 영역 -->
+      <div id="result" class="mt-4 p-4 bg-gray-100 rounded hidden">
+        <h3 class="font-semibold">결과:</h3>
+        <p id="resultText"></p>
+      </div>
+    </div>
+
+    <!-- 커스텀 모달 -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center"
+    >
+      <div class="bg-white p-6 rounded w-96">
+        <h2 class="text-lg mb-4">커스텀 모달 제목</h2>
+        <p class="mb-4">
+          이것은 커스텀 모달입니다. 기본 팝업과 달리 스타일을 자유롭게 꾸밀 수
+          있어요.
+        </p>
+        <div class="flex gap-2">
+          <button
+            id="closeBtn"
+            class="bg-gray-500 text-white px-4 py-2 rounded"
+          >
+            닫기
+          </button>
+          <button
+            id="customConfirmBtn"
+            class="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 요소들 가져오기
+      const alertBtn = document.getElementById("alertBtn");
+      const confirmBtn = document.getElementById("confirmBtn");
+      const promptBtn = document.getElementById("promptBtn");
+      const openBtn = document.getElementById("openBtn");
+      const modal = document.getElementById("modal");
+      const closeBtn = document.getElementById("closeBtn");
+      const customConfirmBtn = document.getElementById("customConfirmBtn");
+
+      // 기본 Alert 팝업
+      alertBtn.onclick = () => {
+        alert("이것은 기본 Alert 팝업입니다!");
+      };
+
+      // 기본 Confirm 팝업
+      confirmBtn.onclick = () => {
+        const result = confirm("정말로 진행하시겠습니까?");
+        if (result) {
+          console.log("확인");
+        } else {
+          console.log("취소");
+        }
+      };
+
+      // 기본 Prompt 팝업
+      promptBtn.onclick = () => {
+        const userInput = prompt("이름을 입력해주세요:", "홍길동");
+        console.log(userInput);
+      };
+
+      // 커스텀 모달 열기
+      openBtn.onclick = () => {
+        modal.classList.remove("hidden");
+      };
+
+      // 커스텀 모달 닫기
+      closeBtn.onclick = () => {
+        modal.classList.add("hidden");
+      };
+
+      // 커스텀 모달 확인
+      customConfirmBtn.onclick = () => {
+        modal.classList.add("hidden");
+      };
+
+      // 배경 클릭으로 모달 닫기
+      modal.onclick = (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+        }
+      };
+    </script>
+  </body>
+</html>

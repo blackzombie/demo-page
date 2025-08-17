@@ -1,0 +1,278 @@
+/* 기본 스타일 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #ffffff;
+  color: #222222;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 상단 네비게이션 */
+.top-navigation {
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+  background-color: #ffffff;
+}
+
+.nav-content {
+  max-width: 1194px;
+  margin: 0; /* 0 auto에서 0으로 변경 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1px;
+  width: 1194px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.menu-item:hover {
+  color: #970000;
+  background-color: #f8f8f8;
+}
+
+.menu-item.active {
+  background-color: #9747ff;
+  color: #ffffff;
+}
+
+.menu-item.active span {
+  color: #ffffff;
+}
+
+.menu-item span:hover {
+  color: #9747ff;
+}
+
+.menu-item span {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.263;
+  text-align: center;
+  color: #222222;
+}
+
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 카테고리 메뉴 */
+.category-menu {
+  width: 1194px;
+  height: 447px;
+  background-color: #ffffff;
+  border: 1px solid #9747ff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px 0px rgba(153, 153, 153, 0.2);
+  position: relative;
+  padding: 20px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  height: 80%;
+}
+
+.category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-title {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #222222;
+  padding: 4px 30px 4px 30px;
+  margin-bottom: 5px;
+}
+
+.brand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 23px;
+}
+
+.brand-item {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.1;
+  color: #222222;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.brand-item:hover {
+  color: #9747ff;
+}
+
+/* 전체상품보기 버튼 */
+.view-all-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 90px;
+  width: 180px;
+  height: 48px;
+  background-color: #ffffff;
+  border: 1px solid #ededed;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+  background-color: #f8f8f8;
+  border-color: #9747ff;
+}
+
+.view-all-button span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.429;
+  white-space: nowrap;
+  color: #222222;
+}
+
+/* 반응형 디자인 */
+/*
+@media (max-width: 1280px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .nav-content {
+    max-width: 100%;
+  }
+
+  .nav-left {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .category-menu {
+    width: 100%;
+    max-width: 1194px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+    height: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-left {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .menu-item {
+    padding: 12px 20px;
+  }
+
+  .menu-item span {
+    font-size: 16px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .category-title {
+    font-size: 14px;
+    padding: 4px 15px;
+  }
+
+  .brand-item {
+    font-size: 13px;
+    padding: 3px 0;
+  }
+
+  .view-all-button {
+    width: 160px;
+    padding: 10px 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .category-title {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+
+  .brand-item {
+    font-size: 12px;
+    padding: 2px 0;
+  }
+
+  .view-all-button {
+    width: 140px;
+    padding: 8px 60px;
+  }
+
+  .view-all-button span {
+    font-size: 13px;
+  }
+}
+*/

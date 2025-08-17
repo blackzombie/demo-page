@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="product-grid grid grid-cols-5 gap-4">
+        <!-- 50개 제품 아이템 생성 -->
+      </div>
+    </div>
+
+    <script>
+      for (let i = 1; i <= 52; i++) {
+        const productItem = `
+          <div class="product-item">
+            <div class="product-image">
+              <img
+                src="https://dzpmecea9yjhn.cloudfront.net/prod/2025/01/17/09/df424613aee24c2fab9082175ea56cea.jpg"
+                alt="Product ${i}"
+              />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title text-[12px] text-gray-600">제품명 ${i}</h3>
+              <p class="product-description text-sm text-gray-900">제품 설명입니다.</p>
+              <div class="product-price text-[14px] font-bold">
+                ₩${Math.floor(Math.random() * 900000) + 100000}
+              </div>
+              
+            </div>
+          </div>
+        `;
+        document.querySelector(".product-grid").innerHTML += productItem;
+      }
+    </script>
+  </body>
+</html>
