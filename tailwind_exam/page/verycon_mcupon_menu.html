@@ -19,7 +19,7 @@
             <div class="menu-item all-menu active">
               <span>전체메뉴</span>
             </div>
-            <div class="menu-item">
+            <div class="menu-item mobile-coupon" id="mobile-coupon-btn">
               <span>모바일쿠폰</span>
             </div>
             <div class="menu-item">
@@ -42,7 +42,7 @@
       </nav>
 
       <!-- 카테고리 메뉴 -->
-      <div class="category-menu">
+      <div class="category-menu show" id="category-menu">
         <div class="category-grid">
           <!-- 커피/음료 -->
           <div class="category-section">
@@ -186,5 +186,17 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // 모바일쿠폰 버튼과 카테고리 메뉴 요소 가져오기
+      const mobileCouponBtn = document.getElementById("mobile-coupon-btn");
+      const categoryMenu = document.getElementById("category-menu");
+
+      // 클릭 이벤트 리스너 추가
+      mobileCouponBtn.addEventListener("click", function () {
+        // 카테고리 메뉴 토글
+        categoryMenu.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>

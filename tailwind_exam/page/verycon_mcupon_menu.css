@@ -99,6 +99,28 @@ body {
   box-shadow: 0px 4px 10px 0px rgba(153, 153, 153, 0.2);
   position: relative;
   padding: 20px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* 메뉴가 보일 때 */
+.category-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  max-height: 500px;
+}
+
+.category-menu.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  max-height: 0;
 }
 
 .category-grid {
