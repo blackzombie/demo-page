@@ -22,12 +22,16 @@
         // document.addEventListener("DOMContentLoaded", ready);
 
         const msg = IMQANative.getSession();
+        const msg = IMQANative.getResource();
+
+        
         console.log("msg~~~~~2 : ", msg)
-        window.onload = function () {
-            
+        window.onload = function () {            
             console.log("msg~~~~~3 onLoad : ", msg)
             document.body.innerText = `IMQANative: ${msg}`;
         }
+
+
     </script>
 </head>
 <body>
