@@ -21,14 +21,17 @@
 
         // document.addEventListener("DOMContentLoaded", ready);
 
-        const msg = IMQANative.getSession();
-        const msg = IMQANative.getResource();
+        const sessionInfo = IMQANative.getSession();
+        const resourceInfo = IMQANative.getResource();
 
         
-        console.log("msg~~~~~2 : ", msg)
+        console.log("sessionInfo~~~~~2 : ", sessionInfo)
+        console.log("resourceInfo~~~~~2 : ", resourceInfo)
+
         window.onload = function () {            
-            console.log("msg~~~~~3 onLoad : ", msg)
-            document.body.innerText = `IMQANative: ${msg}`;
+            console.log("sessionInfo~~~~~3 onLoad : ", sessionInfo)
+            document.body.innerText = `IMQANative: ${sessionInfo}`;
+            document.body.innerText += `IMQANative Resource: ${resourceInfo}`;
         }
 
 
