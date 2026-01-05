@@ -21,17 +21,26 @@
 
         // document.addEventListener("DOMContentLoaded", ready);
 
-        const sessionInfo = IMQANative.getSession();
-        const resourceInfo = IMQANative.getResource();
+        if (!window.IMQANative) {
+              console.error("IMQANative not injected");
+              return;
+        }
+        const sessionRaw = IMQANative.getSession();
+        const resourcesRaw = IMQANative.getResources();
+        const spanRaw = IMQANative.getSpanCommonAttribute();
 
-        
-        console.log("sessionInfo~~~~~2 : ", sessionInfo)
-        console.log("resourceInfo~~~~~2 : ", resourceInfo)
+        console.log("sessionRaw1  : ", sessionRaw)
+        console.log("resourcesRaw1  : ", resourcesRaw)
+        console.log("spanRaw1  : ", spanRaw)
 
         window.onload = function () {            
-            console.log("sessionInfo~~~~~3 onLoad : ", sessionInfo)
-            document.body.innerText = `IMQANative: ${sessionInfo}`;
-            document.body.innerText += `IMQANative Resource: ${resourceInfo}`;
+            console.log("sessionRaw1  : ", sessionRaw)
+            console.log("resourcesRaw1  : ", resourcesRaw)
+            console.log("spanRaw1  : ", spanRaw)
+
+            document.getElementById("session").textContent = sessionRaw
+            document.getElementById("resources").textContent = resourcesRaw
+            document.getElementById("span").textContent = spanRaw
         }
 
 
@@ -39,6 +48,18 @@
 </head>
 <body>
     <h1>세션 테스트 페이지 04081326</h1>
+
+    <h1>IMQA WebView Bridge Test</h1>
+
+    <h2>Session</h2>
+    <pre id="session"></pre>
+
+    <h2>Resources</h2>
+    <pre id="resources"></pre>
+
+    <h2>Span Common Attributes</h2>
+    <pre id="span"></pre>
+
     <div id="output">세션 ID를 불러오는 중...</div>
 </body>
 </html>
